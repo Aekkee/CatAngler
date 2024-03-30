@@ -28,7 +28,7 @@ squid_attack,assets\images\squid.png
 
 sword,assets\images\sword.png
 goldsword,assets\images\goldsword.png
-attack,assets\images\attack.png
+goldsword,assets\images\goldsword.png
 
 interact_F,assets\images\interact_F.png
 coin,assets\images\coin.png
