@@ -22,11 +22,13 @@ public:
 	bool show = false;
 	bool IsPause = false;
 	bool IsCollection = false;
+	bool IsSetting = false;
 
 	virtual bool init();
 	virtual bool exit();
 	virtual void update();
 	virtual void render();
+	void renderSettings();
 	void renderCollection();
 	void initButton();
 

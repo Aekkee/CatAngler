@@ -6,6 +6,7 @@
 #include "Engine.h"
 #include "Camera.h"
 #include "Timer.h"
+#include "SoundManager.h"
 #include "FishingManager.h"
 #include "Input.h"
 #include "Tile.h"
@@ -35,6 +36,7 @@ bool Play::init()
 	int height = 30 * tilesize;
 
 	Camera::GetInstance()->setSceneLimit(width, height);
+
 	cat = new Cat(new Properties("cat", loadedData["PosX"], loadedData["PosY"], 32, 32), loadedData["Health"]);
 	cat->setCoin(loadedData["Coin"]);
 	cat->setDay(loadedData["Day"]);
@@ -98,15 +100,17 @@ bool Play::exit()
 void Play::update()
 {
 	if (IsPause) Input::GetInstance()->setCurrentWindow("pause");
+	if (IsSetting) Input::GetInstance()->setCurrentWindow("setting");
 	if (IsCollection) {
 		Input::GetInstance()->setCurrentWindow("fishcollection");
 	}
-	if (!IsPause && !IsCollection) {
+	if (!IsPause && !IsCollection && !IsSetting) {
 		Input::GetInstance()->setCurrentWindow("play");
 		cam = Camera::GetInstance()->getPosition();
 		float dt = Timer::GetInstance()->getDeltaTime();
 
 		cat->update(dt);
+
 
 		if (cat->getIs_Shopping() && !shop.get_IsVisible()) {
 			shop.toggleShopUI();
@@ -161,7 +165,8 @@ void Play::render()
 	}
 
 	cat->draw();
-	cat->equip();
+
+	if (!IsPause && !IsCollection && !IsSetting) cat->equip();
 
 	if (!cat->getInteract()) {
 		m_Tile->render("Tree");
@@ -194,16 +199,31 @@ void Play::render()
 
 	}
 
+	if (IsSetting){
+		renderSettings();
+	}
+
 	if (IsCollection) {
 		renderCollection();
 	}
-	
-	//Input::GetInstance()->renderButtons(Engine::GetInstance()->GetRenderer());
+
+}
+
+void Play::renderSettings()
+{
+	TextureManager::GetInstance()->draw("exit_button", cam.X + 200, cam.Y + 50, 32, 32, SDL_FLIP_NONE, 2);
+	TextureManager::GetInstance()->draw("tab", 208 + cam.X, 120 + cam.Y, 128, 128, SDL_FLIP_NONE, 3);
+	TextManager::GetInstance()->renderText("Background music", 300 + cam.X, 200 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
+	TextManager::GetInstance()->renderText("Effect music", 320 + cam.X, 260 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
+	Input::GetInstance()->renderSliders();
+	SoundManager::GetInstance()->setMusicVolume("bgmusic", Input::GetInstance()->getSliderValue(0));
+	SoundManager::GetInstance()->setSoundEffectVolume("water_splash", Input::GetInstance()->getSliderValue(1));
 }
 
 void Play::initButton()
 {
 	Vector2D cam = Camera::GetInstance()->getPosition();
+
 
 	Input::GetInstance()->addButton(cam.X + 705, cam.Y + 10, 54, 40, "play", [this]() {
 		std::cout << "pause" << std::endl;
@@ -215,6 +235,7 @@ void Play::initButton()
 		//Input::GetInstance()->deleteButton(24); // delete excess button
 		this->IsCollection = !IsCollection;
 		}, []() {});
+
 	Input::GetInstance()->addButton(cam.X + 708, cam.Y + 60, 48, 48, "fishcollection", [this]() {
 		std::cout << "collection" << std::endl;
 		Input::GetInstance()->deleteButton(46); // delete excess button
@@ -231,7 +252,16 @@ void Play::initButton()
 		this->IsPause = false;
 		}, [this]() {
 			});
+
+	Input::GetInstance()->addButton(cam.X + 210, cam.Y + 60, 54, 40, "setting", [this]() {
+		std::cout << "Exit settings" << std::endl;
+		this->IsPause = true;
+		this->IsSetting = false;
+		}, []() {});
+
 	Input::GetInstance()->addButton(300, 320, 200, 50, "pause", [this]() {
+		std::cout << "setting" << std::endl;
+		this->IsSetting = true;
 		}, [this]() {
 			});
 

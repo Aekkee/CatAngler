@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "Engine.h"
 #include "TextManager.h"
+#include <filesystem>
 #include "SaveManager.h"
 #include "TextureManager.h"
 #include "SoundManager.h"
@@ -29,7 +30,7 @@ bool Menu::exit()
 }
 
 void Menu::update()
-{   
+{
     Engine::GetInstance()->setPlayerSlot("");
     IsSelecting = "";
 }
@@ -43,7 +44,7 @@ void Menu::render()
     m_Aimation->update();
 
     if (currentTab == "menu") {
-        Input::GetInstance()->setCurrentWindow("menu"); 
+        Input::GetInstance()->setCurrentWindow("menu");
         TextureManager::GetInstance()->draw("logo", 164 + cam.X, cam.Y, 256, 128, SDL_FLIP_NONE, 2);
         TextureManager::GetInstance()->draw("badge", 314 + cam.X, 178 + cam.Y, 64, 64, SDL_FLIP_NONE, 3);
         TextureManager::GetInstance()->draw("badge", 314 + cam.X, 278 + cam.Y, 64, 64, SDL_FLIP_NONE, 3);
@@ -72,7 +73,7 @@ void Menu::render()
 }
 
 void Menu::renderSaveScreen(Vector2D cam)
-{   
+{
 
     TextureManager::GetInstance()->draw("exit_button", cam.X + 100, cam.Y, 32, 32, SDL_FLIP_NONE, 2);
     TextureManager::GetInstance()->draw("longslot", 104 + cam.X, 120 + cam.Y, 64, 128, SDL_FLIP_NONE, 3);
@@ -81,10 +82,18 @@ void Menu::renderSaveScreen(Vector2D cam)
 
     for (int i = 1; i <= 3; i++) {
         std::unordered_map<std::string, int> loadedData = SaveManager::GetInstance()->loadGame("savegame" + std::to_string(i) + ".txt");
+
+        std::string filename = "savegame" + std::to_string(i) + ".txt";
+        Input::GetInstance()->addButton(200 + 200 * (i - 1) + cam.X, 510 + cam.Y, 96, 58, "save", [this, filename]() {
+            std::cout << "delete slot1" << std::endl;
+            std::filesystem::remove(filename);
+            }, []() {});
         if (loadedData["Health"] == NULL || loadedData["Health"] <= 0) {
-            TextManager::GetInstance()->renderText("Empty", 125 + 200 * (i-1) + cam.X, 300 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 50);
+            TextManager::GetInstance()->renderText("Empty", 125 + 200 * (i - 1) + cam.X, 300 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 50);
         }
         else {
+            TextureManager::GetInstance()->draw("button", 185 + 200 * (i - 1) + cam.X, 480 + cam.Y, 64, 64, SDL_FLIP_NONE, 2);
+            TextManager::GetInstance()->renderText("Delete", 213 + 200 * (i - 1) + cam.X, 535 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
             std::string health = "Health : " + std::to_string(loadedData["Health"]);
             std::string coin = "Coin : " + std::to_string(loadedData["Coin"]);
             std::string day = "Day : " + std::to_string(loadedData["Day"]);
@@ -93,6 +102,7 @@ void Menu::renderSaveScreen(Vector2D cam)
             TextManager::GetInstance()->renderText(coin.c_str(), 125 + 200 * (i - 1) + cam.X, 320 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
         }
     }
+    //Input::GetInstance()->renderButtons(Engine::GetInstance()->GetRenderer());
 }
 
 void Menu::renderSettings(Vector2D cam)
@@ -100,8 +110,10 @@ void Menu::renderSettings(Vector2D cam)
     TextureManager::GetInstance()->draw("exit_button", cam.X + 100, cam.Y, 32, 32, SDL_FLIP_NONE, 2);
     TextureManager::GetInstance()->draw("tab", 208 + cam.X, 120 + cam.Y, 128, 128, SDL_FLIP_NONE, 3);
     TextManager::GetInstance()->renderText("Background music", 300 + cam.X, 200 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
+    TextManager::GetInstance()->renderText("Effect music", 320 + cam.X, 260 + cam.Y, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
     Input::GetInstance()->renderSliders();
-    SoundManager::GetInstance()->setMusicVolume( "bgmusic", Input::GetInstance()->getSliderValue(0));
+    SoundManager::GetInstance()->setMusicVolume("bgmusic", Input::GetInstance()->getSliderValue(0));
+    SoundManager::GetInstance()->setSoundEffectVolume("water_splash", Input::GetInstance()->getSliderValue(1));
 }
 
 void Menu::renderSelected(Vector2D cam)
@@ -138,20 +150,21 @@ void Menu::initButtons()
     Vector2D cam = Camera::GetInstance()->getPosition();
 
     Input::GetInstance()->addSlider(250, 230, Engine::GetInstance()->GetRenderer());
+    Input::GetInstance()->addSlider(250, 290, Engine::GetInstance()->GetRenderer());
 
-    Input::GetInstance()->addButton( 300, 250, 200, 50, "menu", [this]() {
+    Input::GetInstance()->addButton(300, 250, 200, 50, "menu", [this]() {
         std::cout << "start" << std::endl;
         //startGame();
         this->currentTab = "save";
-    }, [this]() {
-        this->IsSelecting = "start";
-    });
+        }, [this]() {
+            this->IsSelecting = "start";
+            });
 
-    Input::GetInstance()->addButton( 300, 350, 200, 50, "menu", [this]() {
+    Input::GetInstance()->addButton(300, 350, 200, 50, "menu", [this]() {
         this->currentTab = "settings";
         }, [this]() {
             this->IsSelecting = "settings";
-        });
+            });
 
     Input::GetInstance()->addButton(cam.X + 104, cam.Y + 10, 54, 40, "settings", [this]() {
         std::cout << "Exit settings" << std::endl;
@@ -163,7 +176,7 @@ void Menu::initButtons()
         quit();
         }, [this]() {
             this->IsSelecting = "exit";
-        });
+            });
 
     Input::GetInstance()->addButton(cam.X + 104, cam.Y + 10, 54, 40, "save", [this]() {
         std::cout << "Exit save" << std::endl;
@@ -190,6 +203,7 @@ void Menu::initButtons()
         startGame();
         this->currentTab = "menu";
         }, []() {});
+
 }
 
 void Menu::setCursor(const char* imagePath)

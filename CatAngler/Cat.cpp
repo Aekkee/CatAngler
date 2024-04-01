@@ -125,6 +125,10 @@ void Cat::drawInv() {
 	TextManager::GetInstance()->renderText(strm.str().c_str(), cam.X + 65 , cam.Y + 90 , "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
 	TextManager::GetInstance()->renderText(std::to_string(m_Day).c_str(), cam.X + 40, cam.Y + 50, "assets/fonts/VCR_OSD_MONO_1.001.ttf", 20);
 
+	if (m_Inventory->getItems().size() > m_IsUsing && !m_IsShopping && m_Inventory->getItems()[m_IsUsing] != NULL && !m_Inventory->checkVisible()) {
+		m_Inventory->getItems()[m_IsUsing]->draw();
+	}
+
 }
 
 void Cat::update(float dt)
@@ -248,6 +252,7 @@ void Cat::update(float dt)
 		m_Day++;
 		fish_manager->getee()->clear();
 	}
+
 }
 
 void Cat::equip() {
@@ -270,7 +275,7 @@ void Cat::equip() {
 
 	if (m_Inventory->getItems().size() > m_IsUsing && !m_IsShopping && m_Inventory->getItems()[m_IsUsing] != NULL && !m_Inventory->checkVisible()) {
 		m_Inventory->getItems()[m_IsUsing]->update(lastDirection, m_Transform->X + 15, m_Transform->Y, fish_manager->getEnemies(), &m_Health);
-		m_Inventory->getItems()[m_IsUsing]->draw();
+
 		if (m_Inventory->getItems()[m_IsUsing]->getType() == "Rod" && !m_IsInteract && Input::GetInstance()->getCurrentWindow() != "pause") {
 			checkX = m_Inventory->getItems()[m_IsUsing]->getX();
 			checkY = m_Inventory->getItems()[m_IsUsing]->getY();
@@ -287,6 +292,7 @@ void Cat::equip() {
 				m_Inventory->removeItem(m_Inventory->getItems()[m_IsUsing]);
 			}
 		}
+
 	}
 
 }

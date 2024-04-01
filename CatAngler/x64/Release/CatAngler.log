@@ -3,49 +3,59 @@ C:\CatAngler\CatAngler\Character.h(2,1): warning C4067: unexpected tokens follow
 C:\CatAngler\CatAngler\GameObject.h(19,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\CatAngler\CatAngler\GameObject.h(20,8): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\CatAngler\CatAngler\Cat.h(1,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\CatAngler\CatAngler\Play.cpp(121,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(121,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(183,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(183,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(185,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(185,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(187,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(187,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(188,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(188,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(189,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(189,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(191,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(191,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(192,71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(192,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(193,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(193,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(208,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(208,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(213,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(213,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(218,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(218,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(224,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(224,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(261,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(261,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(262,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(262,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(265,97): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(265,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(275,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(275,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(276,94): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(276,78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(277,80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(277,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(280,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\CatAngler\CatAngler\Play.cpp(280,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(125,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(125,18): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(188,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(188,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(190,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(190,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(192,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(192,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(193,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(193,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(194,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(194,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(196,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(196,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(197,71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(197,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(198,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(198,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(214,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(214,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(215,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(215,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(216,78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(216,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(217,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(217,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(228,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(228,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(233,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(233,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(239,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(239,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(245,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(245,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(256,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(256,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(291,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(291,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(292,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(292,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(295,97): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(295,67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(305,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(305,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(306,94): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(306,78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(307,80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(307,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(310,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\CatAngler\CatAngler\Play.cpp(310,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating code
-  14 of 6131 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  3 of 6216 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    17 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   CatAngler.vcxproj -> C:\CatAngler\x64\Release\CatAngler.exe
